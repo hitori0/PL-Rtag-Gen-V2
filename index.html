@@ -42,7 +42,7 @@
         const team = teamSel.value;
         const rank = rankSel.value;
         const clearance = data.teams.find(t => t.name === team).ranks.find(r => r.title === rank).clearance;
-        document.getElementById('output').innerHTML = data.template
+        document.getElementById('output').textContent = data.template
           .replace('{{team}}', team)
           .replace('{{clearance}}', clearance)
           .replace('{{rank}}', rank);
