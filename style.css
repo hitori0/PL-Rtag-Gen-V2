@@ -1,3 +1,7 @@
 body { font-family: Arial, sans-serif; margin: 2em; }
 select, button { margin: 0.5em 0; padding: 0.3em; }
 output { margin-top: 1em; font-weight: bold; }
+
+h3 {
+    color: red;
+}
