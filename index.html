@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prometheus Labs Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    select, button { margin: 0.5em 0; padding: 0.3em; }
+    .output { margin-top: 1em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>[FGOI] Prometheus Laboratories</h2>
+  <label>Team:</label><br />
+  <select id="teamSelect"></select><br />
+
+  <label>Rank:</label><br />
+  <select id="rankSelect"></select><br />
+
+  <button id="generateBtn">Generate</button>
+  <div class="output" id="output"></div>
+
+  <script>
+    async function loadSheet() {
+      const res = await fetch('sheet.json');
+      const data = await res.json();
+      const teamSel = document.getElementById('teamSelect');
+      const rankSel = document.getElementById('rankSelect');
+
+      data.teams.forEach(t => {
+        const opt = new Option(t.name, t.name);
+        teamSel.add(opt);
+      });
+
+      function updateRanks() {
+        rankSel.innerHTML = '';
+        const team = data.teams.find(t => t.name === teamSel.value);
+        team.ranks.forEach(r => rankSel.add(new Option(r.title, r.title)));
+      }
+
+      function generate() {
+        const team = teamSel.value;
+        const rank = rankSel.value;
+        const clearance = data.teams.find(t => t.name === team).ranks.find(r => r.title === rank).clearance;
+        document.getElementById('output').innerHTML = data.template
+          .replace('{{team}}', team)
+          .replace('{{clearance}}', clearance)
+          .replace('{{rank}}', rank);
+      }
+
+      teamSel.onchange = updateRanks;
+      document.getElementById('generateBtn').onclick = generate;
+      updateRanks();
+    }
+    loadSheet();
+  </script>
+</body>
+</html>
