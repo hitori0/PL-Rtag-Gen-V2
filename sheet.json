@@ -52,5 +52,6 @@
       ]
     }
   ],
-  "template": "[FGOI] Prometheus Laboratories | {{team}}&lt;br /&gt;{{clearance}} {{rank}}"
+  "template": "[FGOI] Prometheus Laboratories | {{team}} #<br />{{clearance}} {{rank}}"
+
 }
