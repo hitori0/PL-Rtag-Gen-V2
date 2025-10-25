@@ -138,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
             commands.push(`permhat ${username} ivest,15330913778,15177437784,15893978296,15177801713,92371339244528,holster,kneepads,12577272243`);
             commands.push(`permshirt ${username} 73972368297165`);
             commands.push(`permpants ${username} 128876333929054`);
-        }
      } else if (team === "Overseer") {
         // Overseer morph
         commands.push(`permshirt ${username} 11455930608 11427392983`);
@@ -178,3 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
     
+
