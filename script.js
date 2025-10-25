@@ -141,8 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
      } else if (team === "Overseer") {
         // ED morph
-        commands.push(`permshirt ${username} 11455930608`);
-        commands.push(`permpants ${username} 11427392983`);
+        commands.push(`permshirt ${username} 11455930608 11427392983`);
     }
 
         // Join all commands with the separator
@@ -178,3 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRanks();
 
 });
+
