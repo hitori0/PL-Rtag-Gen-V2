@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             commands.push(`permpants ${username} 128876333929054`);
         }
      } else if (team === "Overseer") {
-        // ED morph
+        // Overseer morph
         commands.push(`permshirt ${username} 11455930608 11427392983`);
     }
 
@@ -177,4 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRanks();
 
 });
-
+    
