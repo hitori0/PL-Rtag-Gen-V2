@@ -29,6 +29,13 @@
             { name: "First Lieutenant", tier: "HR", level: "L3", health: 175 },
             { name: "Captain", tier: "HC", level: "L3", health: 200 },
             { name: "Major", tier: "HC", level: "L3", health: 200 }
+        ],
+        "Overseer": [
+            { name: "Advisor", tier: "HC", level: "L3", health: 200 },
+            { name: "Founder", tier: "HC", level: "L3", health: 200 },
+            { name: "Administrative Officer", tier: "HC", level: "L3", health: 200 },
+            { name: "Chief Operations Officer", tier: "HC", level: "L3", health: 200 },
+            { name: "Chief Executive Officer", tier: "HC", level: "L3", health: 200 }
         ]
     };
 
@@ -42,6 +49,11 @@
             displayName: "[FGOI] Prometheus Laboratories | Security Force",
             color: 'gray',
             starterItems: 'aa-12,arx-200,shield'
+        },
+        "Overseer": {
+            displayName: "[FGOI] Prometheus Laboratories | Overseer",
+            color: '1 94 179',
+            starterItems: 'Golden,clipboard,tablet'
         }
     };
 
@@ -127,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
             commands.push(`permshirt ${username} 73972368297165`);
             commands.push(`permpants ${username} 128876333929054`);
         }
+     } else if (team === "Overseer") {
+        // ED morph
+        commands.push(`permshirt ${username} 11455930608`);
+        commands.push(`permpants ${username} 11427392983`);
+    }
 
         // Join all commands with the separator
         return 'run ' +commands.join(' & ');
@@ -159,4 +176,5 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handleFormSubmit);
     teamSelect.addEventListener('change', updateRanks);
     updateRanks();
+
 });
